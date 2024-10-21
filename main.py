@@ -16,7 +16,6 @@ class main:
         username: str,
         key_id: str,
         message: str,
-        branch: str,
         file: str,
         log_level: int,
         log_file: str,
@@ -27,7 +26,6 @@ class main:
         self.key_id = key_id
         self.message = message
         self.file = file
-        self.branch = branch
         log_config = {
             "format": "[%(asctime)s] - %(levelname)s : %(message)s",
             "datefmt": "%H:%M:%S %d-%b-%Y",
@@ -130,9 +128,6 @@ if __name__ == "__main__":
         metavar="path",
     )
     parser.add_argument(
-        "-b", "--branch", help="Repo branch to commit to - [main]", default="main"
-    )
-    parser.add_argument(
         "-l",
         "--level",
         help="Default logging level",
@@ -155,7 +150,6 @@ if __name__ == "__main__":
         username=args.username,
         key_id=args.key_id,
         message=args.message,
-        branch=args.branch,
         file=args.file,
         log_level=args.level,
         log_file=args.output,
