@@ -18,6 +18,7 @@ function install_push(){
     echo "Adding push to path"
     chmod +x main.py
     sudo cp main.py /usr/local/bin/push
+    sudo cp sanitizer.py /usr/local/bin/commit-sanitizer
 }
 
 function add_entries_to_zshrc(){
